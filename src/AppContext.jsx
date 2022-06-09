@@ -11,7 +11,8 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     (async () => {
-      setLoadedMeetups((await axios.get(url)).data);
+      const response = (await axios.get(url)).data;
+      setLoadedMeetups(response.meetups);
       setIsLoading(false);
     })();
   }, [loadedMeetups]);

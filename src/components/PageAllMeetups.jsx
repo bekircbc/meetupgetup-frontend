@@ -16,7 +16,7 @@ export function PageAllMeetups() {
             return (
               <li key={meetup.id}>
                 <div>
-                  <img src={meetup.image} alt={meetup.title} />
+                  <img src={meetup.imageUrl} alt={meetup.title} />
                 </div>
                 <div>
                   <h3>{meetup.title}</h3>
