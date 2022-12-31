@@ -14,19 +14,17 @@ export function PageNewMeetup() {
 
     const meetupData = {
       title: enteredTitle,
-      image: enteredImage,
+      imageUrl: enteredImage,
       address: enteredAddress,
       description: enteredDescription,
+      isFavorite: false,
     };
 
-    fetch(
-      "https://basic-streaming-app-default-rtdb.firebaseio.com/meetups.json",
-      {
-        method: "POST",
-        body: JSON.stringify(meetupData),
-        headers: { "Content-Type": "application/json" },
-      }
-    );
+    fetch("https://meetupgetup-backend.herokuapp.com/", {
+      method: "POST",
+      body: JSON.stringify(meetupData),
+      headers: { "Content-Type": "application/json" },
+    });
   }
   return (
     <section className="newMeetupPage">
